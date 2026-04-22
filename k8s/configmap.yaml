@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: log-anomaly-agent-config
+  namespace: ai-sre
+data:
+  APP_ENV: "prod"
+  PORT: "8080"
+  WINDOW_SIZE: "5m"
+  MIN_ERROR_COUNT: "20"
+  MIN_SPIKE_RATIO: "3.0"
+  ROBUST_Z_THRESHOLD: "3.5"
+  ENABLE_LLM_SUMMARY: "false"
