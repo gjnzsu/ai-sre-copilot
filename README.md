@@ -253,6 +253,30 @@ uvx ruff check app tests
 uv run pytest
 ```
 
+## Engineering Excellence
+
+This repo follows an AI application quality-gate rule: every AI application build, modification, commit, push, container build, or deployment should run linting and tests before the work is marked complete.
+
+Use the personal skill `ai-app-quality-gate` for this workflow:
+
+```text
+Use the ai-app-quality-gate skill while building, modifying, committing, pushing, or deploying this service.
+```
+
+The skill is intended to enforce:
+
+- linting as a mandatory gate
+- tests as a mandatory gate when present
+- Docker build verification when container changes are involved
+- Kubernetes rollout verification when deployment changes are involved
+- no completion claim unless the quality gate passes in the current turn
+
+For this repository, the quality gate command is:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\quality-check.ps1
+```
+
 ## Docker
 
 Build the container image:
