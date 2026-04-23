@@ -1,5 +1,4 @@
 from datetime import datetime, timezone
-from typing import Any
 
 from app.api.schemas.request import RawLogRecord
 from app.domain.models.log_event import LogEvent
